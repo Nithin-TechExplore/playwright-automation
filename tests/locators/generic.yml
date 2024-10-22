@@ -1,2 +1,5 @@
 Register: "//*[text()='Register']"
 registerButton: "//*[@value='Register']"
+
+sauceUserName: "//input[@id='user-name']"
+saucePassword: "//input[@id='password']"

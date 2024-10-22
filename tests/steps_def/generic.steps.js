@@ -23,3 +23,8 @@ When(/^I click on "([^"]*)" button$/, async function(buttonLocator) {
 Then(/^I wait for "([^"]*)" seconds$/, async function(time) {
     await page.waitForTimeout(time * 1000);
 })
+
+Then(/^I Enter the "([^"]*)" in "([^"]*)"$/,async function(value,locator){
+
+    await actions.enterValue(locators[locator],value)
+})
