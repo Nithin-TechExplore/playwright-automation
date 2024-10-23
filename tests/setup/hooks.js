@@ -107,7 +107,7 @@ After(async function (scenario) {
     console.log('Execution End Time: ' + new Date().toString());
     scenarioContext.getScenarioContext().clear();
 
-    let scenarioName = scenario.pickle.name.replaceAll('', '_') + "_" + moment().format('HH.mm.ss')
+    let scenarioName = scenario.pickle.name.replaceAll(' ', '_') + "_" + moment().format('HH.mm.ss')
     let buffer = await page.screenshot({ path: "reports/screenshots/" + scenarioName + ".png", fullPage: true });
     await this.attach(buffer, 'image/png');
     let videoPath = await page.video().path();
@@ -119,7 +119,7 @@ After(async function (scenario) {
 })
 
 AfterStep(async function (scenario) {
-    let scenarioName = scenario.pickle.name.replaceAll('', '_') + "_" + moment().format('HH.mm.ss')
+    let scenarioName = scenario.pickle.name.replaceAll(' ', '_') + "_" + moment().format('HH.mm.ss')
     if (scenario.result?.status !== 'PASSED') {
         let buffer = await page.screenshot({
             path: "reports/screenshots/" + scenarioName + ".png",
