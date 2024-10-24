@@ -54,7 +54,7 @@ if (!fs.existsSync(executablePath)) {
 }
 
 BeforeAll(async () => {
-    console.log('Path  ',executablePath)
+    console.log('Path  ', executablePath)
     console.log('Started Execution')
     currentDate = moment().format('YYYY-MM-DD');
     let currentTime = moment().format('HH.mm.ss')
@@ -94,7 +94,8 @@ Before(async function (scenario) {
         viewport: null,
         ignoreHTTPSErrors: true,
         recordVideo: {
-            dir: "reports/video_reports"
+            dir: "reports/video_reports",
+            size: { width: 1280, height: 720 }
         }
     })
     global.page = await global.context.newPage();
@@ -111,6 +112,7 @@ After(async function (scenario) {
     let buffer = await page.screenshot({ path: "reports/screenshots/" + scenarioName + ".png", fullPage: true });
     await this.attach(buffer, 'image/png');
     let videoPath = await page.video().path();
+
     const traceFileName = `trace-${scenarioName}-${Date.now()}.zip`;
     await context.tracing.stop({ path: `${folderPath}/${traceFileName}` });
     const zipper = await fs.readFileSync(`${folderPath}/${traceFileName}`);
@@ -125,7 +127,7 @@ AfterStep(async function (scenario) {
             path: "reports/screenshots/" + scenarioName + ".png",
             fullPage: true
         });
-        await this.attch(buffer, 'image/png')
+        await this.attach(buffer, 'image/png')
     }
 })
 

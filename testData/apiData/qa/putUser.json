@@ -1,0 +1,11 @@
+{
+    "url": "https://reqres.in/api/users/2",
+    "header": {
+        "Content-Type": "application/json"
+    },
+    "data": {
+        "name": "morpheus",
+        "job": "zion resident"
+    }
+
+}

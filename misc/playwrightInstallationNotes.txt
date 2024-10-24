@@ -31,3 +31,17 @@ Navigate to C:\Users\nithi\AppData\Roaming\ and create a new folder named npm.
 npm install ts-node --save-dev
 
 npm install typescript --save-dev
+
+
+--------------------------------------------------
+
+To undo the previous commit
+
+
+git rm -r --cached node_modules
+
+git rm -r --cached reports
+
+git rm -r --cached package-lock.json
+
+-----------------------------------------------

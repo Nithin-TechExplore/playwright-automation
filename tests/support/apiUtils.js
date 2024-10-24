@@ -64,9 +64,9 @@ class apiUtils{
     async validateData(jsonQuery,value){
         console.log('Json Query',jsonQuery)
         let apiResponse = await response.json();
-        let actualValue = await jp.query(apiResponse,jsonQuery)
+        let actualValue = await jp.query(apiResponse,jsonQuery)[0]
         console.log('Actual Value : ',actualValue)
-        await expect(value).toBe(actualValue)
+        await expect(value).toBe(actualValue.toString())
     }
 }
 
