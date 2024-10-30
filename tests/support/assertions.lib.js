@@ -1,5 +1,6 @@
 const { expect } = require('playwright/test');
-const actions = require('../support/actions.lib')
+const actions = require('../support/actions.lib');
+const { verifyTitle } = require('../pages/uiEssentialsPage');
 
 
 const assertions = {
@@ -43,6 +44,13 @@ const assertions = {
     },
     verifyElementHidden: async(locator)=>{
         await expect(await actions.getLocator(locator)).toBeHidden()
+    },
+    verifyTitle: async(expectedTitle)=>{
+        await expect(page).toHaveTitle(expectedTitle);
+    },
+    verifyTitleMultiplePages: async(tempPage,expectedTitle)=>{
+        await expect(tempPage).toHaveTitle(expectedTitle);
+
     }
 
 };

@@ -5,7 +5,8 @@ module.exports = {
             requireModule: ['ts-node/register'],
             require: ['tests/steps_def/*.js','tests/setup/*.js'],
             paths: ['tests/features/**/*.feature'],
-            format: [`json:reports/multi-json-html/${buildId}/cucumber_report.json`]
+            format: [`json:reports/multi-json-html/${buildId}/cucumber_report.json`],
+          //  retry: 1
            
         }
         

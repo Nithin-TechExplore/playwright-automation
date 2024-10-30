@@ -4,16 +4,17 @@ const path = process.cwd()
 const env = process.env.env || 'sit';
 const data = require('../../tests/conf/'+env.toLowerCase());
 const scenarioContext = require('../../helpers/context/scenario_context');
+const { baseURL } = require('../conf/qa');
 
 class genericPage{
     async navigateToURL(url){
         await page.goto(data['baseURL']);
-        await page.waitForTimeout(8000)
+        await page.waitForTimeout(3000)
     }
 
     async navigateToPage(url){
         await page.goto(url);
-        await page.waitForTimeout(8000)
+        await page.waitForTimeout(3000)
 
     }
 

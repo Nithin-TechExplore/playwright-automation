@@ -43,8 +43,28 @@ let osName = process.platform
 
 
 if (osName.includes('win32')) {
-    executablePath = path.join(userProfile, 'AppData', 'Local', 'ms-playwright', 'chromium-1134', 'chrome-win', 'chrome.exe');
+    executablePath = path.join(userProfile, 'AppData', 'Local', 'ms-playwright', 'chromium-1140', 'chrome-win', 'chrome.exe');
+   
+   
+    //const userProfile = process.env.USERPROFILE || process.env.HOME;
+    // const executablePath = path.join(userProfile, 'AppData', 'Local', 'ms-playwright');
+
+    // // Read the 'ms-playwright' directory
+    // const versions = fs.readdirSync(executablePath).filter(dir => dir.startsWith('chromium-'));
+
+    // if (versions.length === 0) {
+    //     throw new Error('No Chromium versions found in ms-playwright directory.');
+    // }
+
+    // // Use the latest version (or you could implement your own logic to choose)
+    // const latestVersion = versions[versions.length - 1];
+    // return path.join(executablePath, latestVersion, 'chrome-win', 'chrome.exe');
+   
+   
     headless = false;
+
+
+
 }
 
 // Check if the executable exists
