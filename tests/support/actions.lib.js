@@ -81,9 +81,12 @@ const actions = {
 
     checkRadio: async(locator)=>{
             let button = await actions.getLocator(locator);
-            if(await !button.isChecked()){
-                button.check()
+
+       
+            if(!await button.isChecked()){
+                await button.check()
             }
+
     },
 
     unCheckRadio: async(locator)=>{

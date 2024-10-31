@@ -5,7 +5,8 @@ const genericPage = require('../pages/genericPage')
 const common = require('../../helpers/common.utils')
 const uiEssentialsPage = require('../pages/uiEssentialsPage')
 const assertions = require('../support/assertions.lib')
-const locators = require('../locators/generic.yml')
+const locators = common.readYamlFiles(process.cwd() + '/tests/locators/' + '/generic.yml')
+
 
 
 Then('I verify if {string} page is opened', async function (pageName) {
@@ -70,4 +71,11 @@ Then(/^I check if the Heading of the page is "([^"]*)"(| "([^"]*)")$/,async func
         derivedPage = await global.page;
     }
     await uiEssentialsPage.verifyHeadingPage(derivedPage,expectedTitle)
+})
+
+When(/^I select "([^"]*)" from dropdown$/,async function(param) {
+    let loc = await locators['dropdown'];
+    console.log('Locators  ',locators['dropdown'])
+    await actions.selectByValue(locators['dropdown'],param);
+
 })

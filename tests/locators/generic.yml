@@ -3,3 +3,22 @@ registerButton: "//*[@value='Register']"
 
 sauceUserName: "//input[@id='user-name']"
 saucePassword: "//input[@id='password']"
+
+dropdown: "//*[@id='dropdown']"
+
+#formy Application
+Complete Web Form: "//a[text()='Complete Web Form' and @class='btn btn-lg']"
+firstName: "//*[@id='first-name']"
+lastName: "//*[@id='last-name']"
+jobTitle: "//*[@id='job-title']"
+formRadio: "//div[input[@type='radio'] and contains(.,'value')]"
+High School: "//div[input[@type='radio'] and contains(.,'High School')]//self::input"
+College: "//div[input[@type='radio'] and contains(.,'College')]//self::input"
+Grad School: "//div[input[@type='radio'] and contains(.,'Grad School')]//self::input"
+checkBox: "//div[input[@type='checkbox'] and contains(.,'value')]//self::input"
+Years of experience: "//*[@id='select-menu']"
+datePicker: "//*[@id='datepicker']"
+yearMonth: "//*[@class='datepicker-days']//descendant::th[@class='datepicker-switch']"
+datePickerNext: "//*[@class='datepicker-days']//descendant::th[@class='next']"
+datePickerPrevious: "//*[@class='datepicker-days']//descendant::th[@class='prev']"
+days: "//*[@class='datepicker-days']//descendant::tbody//tr//td[@class='day']"

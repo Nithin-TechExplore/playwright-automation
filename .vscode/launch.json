@@ -1,26 +1,20 @@
 {
     "configurations": [
         {
-            "command": "npx cross-env env=sit browser=chromium cucumber-js --config config/cucumber.js --tags @deleteAPITest",
-            "name": "Run npm start",
+            "name": "Debug Cucumber Tests",
             "request": "launch",
-            "type": "node-terminal"
+            "type": "node",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": [
+                "cross-env",
+                "env=test",
+                "browser=chromium",
+                "cucumber-js",
+                "--config",
+                "config/cucumber.js",
+                "--tags",
+                "@formfill"
+            ]
         },
-    // {
-    //     "name": "Launch via NPM",
-    //     "request": "launch",
-    //    "program": "${workspaceFolder}/node_modules/.bin/cucumber-js",
-    //    // "program": "npx",
-    //     "args": [
-    //         "--config","config/cucumber.js",
-    //         "--tags","@deleteAPITest"
-    //     ],
-    //     "env": {
-    //         "env": "qa",
-    //         "browser": "chromium"
-    //     },
-    //     "type": "node",
-    //     "console": "integratedTerminal"
-    // }
     ]
 }
