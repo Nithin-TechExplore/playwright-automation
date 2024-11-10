@@ -1,6 +1,6 @@
 Feature: Fill a webform application
 
-    @formfill
+    @formfill1
     Scenario: Fill all the details and submit the form
         Given I launch the application
         When I click on "Complete Web Form" link

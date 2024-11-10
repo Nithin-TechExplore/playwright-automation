@@ -1,7 +1,5 @@
 const { expect } = require('playwright/test');
 const actions = require('../support/actions.lib');
-const { verifyTitle } = require('../pages/uiEssentialsPage');
-
 
 const assertions = {
     verifyText: async(text) => {

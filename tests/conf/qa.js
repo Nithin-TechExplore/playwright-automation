@@ -1,3 +1,3 @@
 module.exports={
-    baseURL: "https://www.saucedemo.com/v1/"
+    baseURL: 'https://formy-project.herokuapp.com/'
 }

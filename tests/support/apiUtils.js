@@ -54,7 +54,7 @@ class apiUtils{
                 headers: apiData.header, 
             }
         )
-        console.log('Response Body ',await response.json());
+        //console.log('Response Body ',await response.json());
     }
 
     async validateResponseStatusCode(expectedStatusCode){
